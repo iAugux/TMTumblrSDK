@@ -73,6 +73,15 @@
 + (void)createChatPost:(NSString *)title body:(NSString *)body tags:(NSArray *)tags success:(NSURL *)successURL
                 cancel:(NSURL *)cancelURL;
 
++ (void)createPhotoPost:(NSString *)title tags:(NSArray *)tags;
++ (void)createPhotoPost:(NSString *)title tags:(NSArray *)tags success:(NSURL *)successURL cancel:(NSURL *)cancelURL;
+
++ (void)createVideoPost:(NSString *)title tags:(NSArray *)tags;
++ (void)createVideoPost:(NSString *)title tags:(NSArray *)tags success:(NSURL *)successURL cancel:(NSURL *)cancelURL;
+
++ (void)createAudioPost:(NSString *)title tags:(NSArray *)tags;
++ (void)createAudioPost:(NSString *)title tags:(NSArray *)tags success:(NSURL *)successURL cancel:(NSURL *)cancelURL;
+
 /**
  *  Present the OAuth authorize screen to the user.
  *

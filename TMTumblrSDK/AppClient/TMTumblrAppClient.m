@@ -135,6 +135,34 @@ typedef NS_ENUM(NSUInteger, TMUniversalLink) {
     [self performAction:@"chat" parameters:params success:successURL cancel:cancelURL];
 }
 
+
++ (void)createPhotoPost:(NSString *)title tags:(NSArray *)tags {
+    [self createPhotoPost:title tags:tags success:nil cancel:nil];
+}
+
++ (void)createPhotoPost:(NSString *)title tags:(NSArray *)tags success:(NSURL *)successURL cancel:(NSURL *)cancelURL {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [self performAction:@"photo" parameters:params success:successURL cancel:cancelURL];
+}
+
++ (void)createVideoPost:(NSString *)title tags:(NSArray *)tags {
+    [self createVideoPost:title tags:tags success:nil cancel:nil];
+}
+
++ (void)createVideoPost:(NSString *)title tags:(NSArray *)tags success:(NSURL *)successURL cancel:(NSURL *)cancelURL {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [self performAction:@"video" parameters:params success:successURL cancel:cancelURL];
+}
+
++ (void)createAudioPost:(NSString *)title tags:(NSArray *)tags {
+    [self createAudioPost:title tags:tags success:nil cancel:nil];
+}
+
++ (void)createAudioPost:(NSString *)title tags:(NSArray *)tags success:(NSURL *)successURL cancel:(NSURL *)cancelURL {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [self performAction:@"audio" parameters:params success:successURL cancel:cancelURL];
+}
+
 + (void)showAuthorizeWithToken:(NSString *)token {
     [self openLink:TMUniversalLinkAuthorize parameters:@{ @"oauth_token" : token }];
 }
